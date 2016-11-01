@@ -1,0 +1,688 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="spring-boot,spring," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1. Getting started1.1 IntroducingSpring Boot用于构建卓越的、工业级Spring应用，使用spring和第三方库，以及很少的配置就可完成。
+Spring Boot可以使你使用java -jar这种启动javase项目的模式来启动应用，或者仍然选择传统的war
+包的方式。同时，spring官方提供了一个命令行工具spring scripts。
+spring-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring-boot是什么？">
+<meta property="og:url" content="http://yoursite.com/2016/10/21/spring-boot/index.html">
+<meta property="og:site_name" content="sevtec">
+<meta property="og:description" content="1. Getting started1.1 IntroducingSpring Boot用于构建卓越的、工业级Spring应用，使用spring和第三方库，以及很少的配置就可完成。
+Spring Boot可以使你使用java -jar这种启动javase项目的模式来启动应用，或者仍然选择传统的war
+包的方式。同时，spring官方提供了一个命令行工具spring scripts。
+spring-">
+<meta property="og:updated_time" content="2016-11-01T06:16:37.183Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring-boot是什么？">
+<meta name="twitter:description" content="1. Getting started1.1 IntroducingSpring Boot用于构建卓越的、工业级Spring应用，使用spring和第三方库，以及很少的配置就可完成。
+Spring Boot可以使你使用java -jar这种启动javase项目的模式来启动应用，或者仍然选择传统的war
+包的方式。同时，spring官方提供了一个命令行工具spring scripts。
+spring-">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/21/spring-boot/"/>
+
+  <title> spring-boot是什么？ | sevtec </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">sevtec</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">have a rest</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                spring-boot是什么？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-21T01:35:58+08:00" content="2016-10-21">
+              2016-10-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-Getting-started"><a href="#1-Getting-started" class="headerlink" title="1. Getting started"></a>1. Getting started</h1><h2 id="1-1-Introducing"><a href="#1-1-Introducing" class="headerlink" title="1.1 Introducing"></a>1.1 Introducing</h2><p>Spring Boot用于构建卓越的、工业级Spring应用，使用spring和第三方库，以及很少的配置就可完成。</p>
+<p>Spring Boot可以使你使用<code>java -jar</code>这种启动javase项目的模式来启动应用，或者仍然选择传统的<code>war</code></p>
+<p>包的方式。同时，spring官方提供了一个命令行工具<code>spring scripts</code>。</p>
+<p>spring-boot的官方愿景</p>
+<ul>
+<li>打造一个彻底的快速的，被广泛接受的上手体验</li>
+<li>开箱即用 快速开发 （感谢way的翻译）</li>
+<li>为大型项目提供一些常用的非功能性拓展，比如内嵌的web容器、安全、性能监控、健康检查、额外配置等</li>
+<li>尽量少的配置文件</li>
+</ul>
+<h2 id="1-2-环境要求"><a href="#1-2-环境要求" class="headerlink" title="1.2 环境要求"></a>1.2 环境要求</h2><p>官方已经发布<code>2.0.0.BUILD-SNAPSHOT</code>，目前该版本的Maven资源存在问题无法下载。</p>
+<p>2.0需要最低Java 7和spring 5，如果使用6需要特殊配置</p>
+<p><a href="http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto-use-java-6" target="_blank" rel="external">http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#howto-use-java-6</a></p>
+<p>Maven 3.2+</p>
+<p>Gradle 1.12 or 2.x，不支持3，对2.7和之前的版本是过期状态，可以看出对Gradle支持不是很好</p>
+<p>当然，官方很建议使用java 8来上手。</p>
+<p>Servlet 3.0+    个人建议</p>
+<a id="more"></a>
+<h2 id="1-3-一个spring-boot实例"><a href="#1-3-一个spring-boot实例" class="headerlink" title="1.3 一个spring boot实例"></a>1.3 一个spring boot实例</h2><h3 id="1-3-1-Maven配置项"><a href="#1-3-1-Maven配置项" class="headerlink" title="1.3.1 Maven配置项"></a>1.3.1 Maven配置项</h3><p>spring-boot提供了一系列的starter，名称类似<code>spring-boot-*.jar</code>，具体下面会讲。</p>
+<p>官方建议使用构建工具譬如Maven来管理项目，首先确认Java和maven环境</p>
+<p>下面是一个典型的<code>pom.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></div><div class="line">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>myproject<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Inherit defaults from Spring Boot --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0.BUILD-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Add typical dependencies for a web application --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Package as an executable jar --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Add Spring repositories --&gt;</span></div><div class="line">    <span class="comment">&lt;!-- (you don't need this if you are using a .RELEASE version) --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">repository</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>spring-snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo.spring.io/snapshot<span class="tag">&lt;/<span class="name">url</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span><span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span><span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">repository</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>spring-milestones<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo.spring.io/milestone<span class="tag">&lt;/<span class="name">url</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">pluginRepositories</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">pluginRepository</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>spring-snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo.spring.io/snapshot<span class="tag">&lt;/<span class="name">url</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">pluginRepository</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">pluginRepository</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>spring-milestones<span class="tag">&lt;/<span class="name">id</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo.spring.io/milestone<span class="tag">&lt;/<span class="name">url</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">pluginRepository</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">pluginRepositories</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>上面通过<code>spring-boot-starter-parent</code>来使用spring-boot，但是在项目中，业务模块往往需要继承自己的parent模块，这种方式就不可取了，因此，官方提供了另外的方式</p>
+<p>通过<code>dependencyManagement</code>来使用spring-boot</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- Import dependency management from Spring Boot --&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0.BUILD-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>上面的做法中并不能覆盖spring-boot提供的依赖版本，如果想要覆盖个别依赖版本，需要下面这样的额外配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- Override Spring Data release train provided by Spring Boot --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.data<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-data-releasetrain<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>Fowler-SR2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0.BUILD-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="1-3-2-使用starter"><a href="#1-3-2-使用starter" class="headerlink" title="1.3.2 使用starter"></a>1.3.2 使用starter</h3><p>spring-boot提供了一系列starters，可以兼容很多开发环境，我们已经使用过<code>spring-boot-starter-parent</code>，这是一个maven默认的指定的starter，其它不同的starters分别服务于为不同的开发环境，譬如开发一个web应用可以使用<code>spring-boot-starter-web</code>。</p>
+<p>在开始之前可以使用<code>mvn dependency:tree</code>来观察项目结构，可以看到starter-parent没有提供任何依赖。</p>
+<p>现在加入starter-web</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>之后再使用tree来看，会发现多了很多依赖。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">[INFO] com.xx.fun:hbase-client-test:jar:1.0-SNAPSHOT</div><div class="line">[INFO] \- org.springframework.boot:spring-boot-starter-web:jar:1.3.1.RELEASE:compile</div><div class="line">[INFO]    +- org.springframework.boot:spring-boot-starter:jar:1.3.1.RELEASE:compile</div><div class="line">[INFO]    |  +- org.springframework.boot:spring-boot:jar:1.3.1.RELEASE:compile</div><div class="line">[INFO]    |  +- org.springframework.boot:spring-boot-autoconfigure:jar:1.3.1.RELEASE:compile</div><div class="line">[INFO]    |  +- org.springframework.boot:spring-boot-starter-logging:jar:1.3.1.RELEASE:compile</div><div class="line">[INFO]    |  |  +- ch.qos.logback:logback-classic:jar:1.1.3:compile</div><div class="line">[INFO]    |  |  |  +- ch.qos.logback:logback-core:jar:1.1.3:compile</div><div class="line">[INFO]    |  |  |  \- org.slf4j:slf4j-api:jar:1.7.13:compile</div><div class="line">[INFO]    |  |  +- org.slf4j:jcl-over-slf4j:jar:1.7.13:compile</div><div class="line">[INFO]    |  |  +- org.slf4j:jul-to-slf4j:jar:1.7.13:compile</div><div class="line">[INFO]    |  |  \- org.slf4j:log4j-over-slf4j:jar:1.7.13:compile</div><div class="line">[INFO]    |  +- org.springframework:spring-core:jar:4.2.4.RELEASE:compile</div><div class="line">[INFO]    |  \- org.yaml:snakeyaml:jar:1.16:runtime</div><div class="line">[INFO]    +- org.springframework.boot:spring-boot-starter-tomcat:jar:1.3.1.RELEASE:compile</div><div class="line">[INFO]    |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:8.0.30:compile</div><div class="line">[INFO]    |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:8.0.30:compile</div><div class="line">[INFO]    |  +- org.apache.tomcat.embed:tomcat-embed-logging-juli:jar:8.0.30:compile</div><div class="line">[INFO]    |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.0.30:compile</div><div class="line">[INFO]    +- org.springframework.boot:spring-boot-starter-validation:jar:1.3.1.RELEASE:compile</div><div class="line">[INFO]    |  \- org.hibernate:hibernate-validator:jar:5.2.2.Final:compile</div><div class="line">[INFO]    |     +- javax.validation:validation-api:jar:1.1.0.Final:compile</div><div class="line">[INFO]    |     +- org.jboss.logging:jboss-logging:jar:3.3.0.Final:compile</div><div class="line">[INFO]    |     \- com.fasterxml:classmate:jar:1.1.0:compile</div><div class="line">[INFO]    +- com.fasterxml.jackson.core:jackson-databind:jar:2.6.4:compile</div><div class="line">[INFO]    |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.6.4:compile</div><div class="line">[INFO]    |  \- com.fasterxml.jackson.core:jackson-core:jar:2.6.4:compile</div><div class="line">[INFO]    +- org.springframework:spring-web:jar:4.2.4.RELEASE:compile</div><div class="line">[INFO]    |  +- org.springframework:spring-aop:jar:4.2.4.RELEASE:compile</div><div class="line">[INFO]    |  |  \- aopalliance:aopalliance:jar:1.0:compile</div><div class="line">[INFO]    |  +- org.springframework:spring-beans:jar:4.2.4.RELEASE:compile</div><div class="line">[INFO]    |  \- org.springframework:spring-context:jar:4.2.4.RELEASE:compile</div><div class="line">[INFO]    \- org.springframework:spring-webmvc:jar:4.2.4.RELEASE:compile</div><div class="line">[INFO]       \- org.springframework:spring-expression:jar:4.2.4.RELEASE:compile</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] BUILD SUCCESS</div></pre></td></tr></table></figure>
+<h3 id="1-3-3-编写代码"><a href="#1-3-3-编写代码" class="headerlink" title="1.3.3 编写代码"></a>1.3.3 编写代码</h3><p>编写一个Java类，作为入口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RestController</span></div><div class="line"><span class="meta">@EnableAutoConfiguration</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)</div><div class="line">    <span class="function">String <span class="title">home</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"Hello World!"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        SpringApplication.run(Example.class, args);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>@RestController</code>是一个约定的写法，告诉人们这个类扮演的角色，spring会把这个类当成一个处理请求的web controller。</p>
+<p><code>@RequestMapping</code>提供一个路由信息，告诉spring路径为<code>/</code>的请求会被该方法处理。</p>
+<p>这两个都是spring mvc的注解。</p>
+<p><code>@EnableAutoConfiguration</code>告诉spring怎样配置应用，starter-web加入了tomcat和spring mvc的依赖，主要是针对这两个的配置项。</p>
+<blockquote>
+<p>自动化配置的设计在starter中运行良好，但是并不是说必须选择自动化配置，用户仍然可以使用传统方式配置指定的依赖包</p>
+</blockquote>
+<p>在main方法中委托spring boot的<code>SpringApplication</code>类通过run来启动应用。</p>
+<p>启动成功后可以通过tomcat默认端口来访问。</p>
+<h2 id="1-4-创建一个可执行的jar包"><a href="#1-4-创建一个可执行的jar包" class="headerlink" title="1.4 创建一个可执行的jar包"></a>1.4 创建一个可执行的jar包</h2><p>在上面我们已经创建了一个spring-boot项目，并且运行成功，下面通过Maven plugin来将应用打成jar包。这个独立的jar包应该包含所有运行环境需要的依赖包。</p>
+<p>java原生并不提供执行一个嵌套的jar包，为了解决这个问题</p>
+<blockquote>
+<p>Über-jar，Über来自于德语above或者over，一个Über-jar是指一个jar包内嵌了所有的依赖包。</p>
+</blockquote>
+<p>在dependences下面增加plugin节点</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>starter-parent中的pom已经定义了<code>&lt;executions&gt;</code>的配置，如果不是使用starter-parent的话需要自己额外配置！</p>
+<p>执行<code>mvn package</code>会在target生成jar包，执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ jar tvf target/xxx-0.0.1-SNAPSHOT.jar		//查看jar内部  个人推荐jd-gui来看</div></pre></td></tr></table></figure>
+<p>同时target下面也会有一个小点的jar包，<code>xxx-0.0.1-SNAPSHOT.jar.original</code>这个是maven生成的不包含lib的普通jar包。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/spring-boot/" rel="tag">#spring-boot</a>
+          
+            <a href="/tags/spring/" rel="tag">#spring</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/21/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/01/hello-world/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="小七睡不着" />
+          <p class="site-author-name" itemprop="name">小七睡不着</p>
+          <p class="site-description motion-element" itemprop="description">转了一圈 又回来了！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Icepo" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Getting-started"><span class="nav-text">1. Getting started</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Introducing"><span class="nav-text">1.1 Introducing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-环境要求"><span class="nav-text">1.2 环境要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-一个spring-boot实例"><span class="nav-text">1.3 一个spring boot实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Maven配置项"><span class="nav-text">1.3.1 Maven配置项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-使用starter"><span class="nav-text">1.3.2 使用starter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-编写代码"><span class="nav-text">1.3.3 编写代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-创建一个可执行的jar包"><span class="nav-text">1.4 创建一个可执行的jar包</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小七睡不着</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
